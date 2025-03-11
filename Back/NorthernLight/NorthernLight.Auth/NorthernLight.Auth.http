@@ -1,0 +1,6 @@
+@NorthernLight.Auth_HostAddress = http://localhost:5282
+
+GET {{NorthernLight.Auth_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

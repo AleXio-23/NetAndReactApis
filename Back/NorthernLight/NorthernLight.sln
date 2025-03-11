@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{CD701621-4EA6-4372-9933-C8DF76F10ED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthernLight.Auth", "NorthernLight.Auth\NorthernLight.Auth.csproj", "{80E728C0-5C6D-4E2E-B392-72DA04E2B1CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80E728C0-5C6D-4E2E-B392-72DA04E2B1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E728C0-5C6D-4E2E-B392-72DA04E2B1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E728C0-5C6D-4E2E-B392-72DA04E2B1CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E728C0-5C6D-4E2E-B392-72DA04E2B1CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{80E728C0-5C6D-4E2E-B392-72DA04E2B1CC} = {CD701621-4EA6-4372-9933-C8DF76F10ED3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F203C2E-3FFA-44D7-9F40-83130B24310B}
+	EndGlobalSection
+EndGlobal
