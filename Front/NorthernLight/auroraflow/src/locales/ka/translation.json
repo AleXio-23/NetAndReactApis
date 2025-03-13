@@ -1,12 +1,37 @@
 {
   "signIn": {
-    "title": "შესვლა",
-    "email": "ელ.ფოსტა",
+    "title": "ავტორიზაცია",
+    "emailOrUsername": "ელ.ფოსტა ან მომხმარებლის სახელი",
     "password": "პაროლი",
-    "signInButton": "შესვლა",
-    "signInWithGoogle": "Google-ით შესვლა",
     "forgotPassword": "დაგავიწყდათ პაროლი?",
-    "dontHaveAccount": "არ გაქვთ ანგარიში?"
+    "submit": "შესვლა",
+    "signInWithGoogle": "Google-ით შესვლა",
+    "noAccount": "არ გაქვთ ანგარიში?",
+    "signUp": "რეგისტრაცია",
+    "accountInformation": "ანგარიშის ინფორმაცია"
+  },
+  "signUp": {
+    "title": "რეგისტრაცია",
+    "emailOrUsername": "ელ.ფოსტა ან მომხმარებლის სახელი",
+    "password": "პაროლი",
+    "confirmPassword": "გაიმეორეთ პაროლი",
+    "accountInformation": "ანგარიშის ინფორმაცია",
+    "additionalInfo": "დამატებითი ინფორმაცია",
+    "firstName": "სახელი",
+    "firstNamePlaceholder": "გიორგი",
+    "lastName": "გვარი",
+    "lastNamePlaceholder": "გიორგაძე",
+    "personalNumber": "პირადი ნომერი",
+    "personalNumberPlaceholder": "შეიყვანეთ თქვენი პირადი ნომერი",
+    "phoneNumber1": "ტელეფონის ნომერი",
+    "phoneNumber2": "ალტერნატიული ნომერი",
+    "birthDate": "დაბადების თარიღი",
+    "avatar": "პროფილის სურათი",
+    "chooseFile": "აირჩიეთ ფაილი",
+    "submit": "რეგისტრაცია",
+    "signUpWithGoogle": "Google-ით რეგისტრაცია",
+    "alreadyHaveAccount": "უკვე გაქვთ ანგარიში?",
+    "signIn": "ავტორიზაცია"
   },
   "header": {
     "darkMode": "ბნელი რეჟიმი",

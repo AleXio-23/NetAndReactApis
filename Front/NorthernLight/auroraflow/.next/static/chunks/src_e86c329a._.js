@@ -524,9 +524,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-i18next/dist/es/useTranslation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ThemeToggle$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ThemeToggle.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LanguageSelector$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/LanguageSelector.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
+;
 ;
 ;
 ;
@@ -549,6 +551,8 @@ const Header = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$s
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  position: relative;
+  z-index: 10;
 `;
 _c1 = Header;
 const Logo = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].h1`
@@ -564,6 +568,10 @@ _c2 = Logo;
 const HeaderControls = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].div`
   display: flex;
   align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 11;
+  pointer-events: auto;
 `;
 _c3 = HeaderControls;
 const MainContent = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].main`
@@ -606,22 +614,30 @@ const Form = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sty
   gap: 1.25rem;
 `;
 _c7 = Form;
+const FormSection = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].div`
+  margin-bottom: 1.5rem;
+`;
+_c8 = FormSection;
 const InputGroup = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  margin-bottom: 1rem;
 `;
-_c8 = InputGroup;
+_c9 = InputGroup;
 const Label = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].label`
   color: ${({ theme })=>theme.text};
   font-size: 0.79rem;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 1.2em;
 `;
-_c9 = Label;
+_c10 = Label;
 const InputWrapper = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].div`
   position: relative;
 `;
-_c10 = InputWrapper;
+_c11 = InputWrapper;
 const Input = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].input`
   background-color: ${({ theme })=>theme.inputBackground};
   border: 1px solid ${({ theme })=>theme.inputBorder};
@@ -642,7 +658,7 @@ const Input = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$st
     color: #9ca3af;
   }
 `;
-_c11 = Input;
+_c12 = Input;
 const PasswordButton = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].button`
   background: transparent;
   border: none;
@@ -653,15 +669,43 @@ const PasswordButton = __TURBOPACK__imported__module__$5b$project$5d2f$node_modu
   top: 50%;
   transform: translateY(-50%);
 `;
-_c12 = PasswordButton;
+_c13 = PasswordButton;
+const GoogleButton = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].button`
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  color: #4b5563;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: #f9fafb;
+  }
+  
+  svg {
+    height: 1.35rem;
+    width: 1.35rem;
+  }
+`;
+_c14 = GoogleButton;
 const SignInButton = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].button`
+  width: 100%;
   background: linear-gradient(to right, ${({ theme })=>theme.primary}, ${({ theme })=>theme.secondary});
   border: none;
   border-radius: 0.375rem;
   color: ${({ theme })=>theme.buttonText};
   cursor: pointer;
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 0.5rem;
   padding: 0.75rem;
   transition: opacity 0.2s ease;
@@ -670,7 +714,7 @@ const SignInButton = __TURBOPACK__imported__module__$5b$project$5d2f$node_module
     opacity: 0.9;
   }
 `;
-_c13 = SignInButton;
+_c15 = SignInButton;
 const Divider = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].div`
   display: flex;
   align-items: center;
@@ -689,34 +733,7 @@ const Divider = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$
     padding: 0 1rem;
   }
 `;
-_c14 = Divider;
-const GoogleButton = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].button`
-  background-color: white;
-  border: 1px solid #d1d5db;
-  border-radius: 0.375rem;
-  color: #4b5563;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 400;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  width: 100%;
-  margin-bottom: 0.5rem;
-  transition: background-color 0.2s ease;
-  
-  &:hover {
-    background-color: #f9fafb;
-  }
-  
-  svg {
-    height: 1.35rem;
-    width: 1.35rem;
-  }
-`;
-_c15 = GoogleButton;
+_c16 = Divider;
 const ForgotPasswordLink = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].a`
   color: ${({ theme })=>theme.primary};
   font-size: 0.75rem;
@@ -729,7 +746,7 @@ const ForgotPasswordLink = __TURBOPACK__imported__module__$5b$project$5d2f$node_
     text-decoration: underline;
   }
 `;
-_c16 = ForgotPasswordLink;
+_c17 = ForgotPasswordLink;
 const FooterText = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].p`
   color: ${({ theme })=>theme.text};
   font-size: 0.79rem;
@@ -747,17 +764,47 @@ const FooterText = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$
     }
   }
 `;
-_c17 = FooterText;
+const ButtonsGrid = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].div`
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1.5rem;
+  
+  @media (max-width: 500px) {
+    flex-direction: ${({ isGeorgian })=>isGeorgian ? 'column' : 'row'};
+  }
+`;
+const SignUpPrompt = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].div`
+  margin-top: 1rem;
+  text-align: center;
+  color: ${({ theme })=>theme.textSecondary};
+  font-size: 0.65rem;
+`;
+_c18 = SignUpPrompt;
+const SignUpLink = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])`
+  color: ${({ theme })=>theme.primary};
+  font-weight: 500;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+_c19 = SignUpLink;
 const SignIn = ()=>{
     _s();
     const [showPassword, setShowPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const { t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslation"])();
+    const { t, i18n } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslation"])();
+    const isGeorgian = i18n.language === 'ka';
     const togglePasswordVisibility = ()=>{
         setShowPassword(!showPassword);
     };
     const handleSubmit = (e)=>{
         e.preventDefault();
     // Add sign-in logic here
+    };
+    const handleGoogleSignIn = ()=>{
+    // Add Google sign-in logic here
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PageContainer, {
         children: [
@@ -767,31 +814,31 @@ const SignIn = ()=>{
                         children: "AuroraFlow"
                     }, void 0, false, {
                         fileName: "[project]/src/components/SignIn.tsx",
-                        lineNumber: 241,
+                        lineNumber: 294,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(HeaderControls, {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ThemeToggle$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ThemeToggle"], {}, void 0, false, {
                                 fileName: "[project]/src/components/SignIn.tsx",
-                                lineNumber: 243,
+                                lineNumber: 296,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LanguageSelector$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["LanguageSelector"], {}, void 0, false, {
                                 fileName: "[project]/src/components/SignIn.tsx",
-                                lineNumber: 244,
+                                lineNumber: 297,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/SignIn.tsx",
-                        lineNumber: 242,
+                        lineNumber: 295,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/SignIn.tsx",
-                lineNumber: 240,
+                lineNumber: 293,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(MainContent, {
@@ -801,11 +848,12 @@ const SignIn = ()=>{
                             children: t('signIn.title')
                         }, void 0, false, {
                             fileName: "[project]/src/components/SignIn.tsx",
-                            lineNumber: 250,
+                            lineNumber: 303,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(GoogleButton, {
                             type: "button",
+                            onClick: handleGoogleSignIn,
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                     viewBox: "0 0 24 24",
@@ -815,7 +863,7 @@ const SignIn = ()=>{
                                             d: "M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/SignIn.tsx",
-                                            lineNumber: 254,
+                                            lineNumber: 307,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -823,7 +871,7 @@ const SignIn = ()=>{
                                             d: "M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/SignIn.tsx",
-                                            lineNumber: 258,
+                                            lineNumber: 311,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -831,7 +879,7 @@ const SignIn = ()=>{
                                             d: "M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/SignIn.tsx",
-                                            lineNumber: 262,
+                                            lineNumber: 315,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -839,20 +887,20 @@ const SignIn = ()=>{
                                             d: "M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/SignIn.tsx",
-                                            lineNumber: 266,
+                                            lineNumber: 319,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/SignIn.tsx",
-                                    lineNumber: 253,
+                                    lineNumber: 306,
                                     columnNumber: 13
                                 }, this),
                                 t('signIn.signInWithGoogle')
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/SignIn.tsx",
-                            lineNumber: 252,
+                            lineNumber: 305,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Divider, {
@@ -860,149 +908,159 @@ const SignIn = ()=>{
                                 children: "OR"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/SignIn.tsx",
-                                lineNumber: 275,
+                                lineNumber: 328,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/SignIn.tsx",
-                            lineNumber: 274,
+                            lineNumber: 327,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Form, {
                             onSubmit: handleSubmit,
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Label, {
-                                            htmlFor: "email",
-                                            children: t('signIn.email')
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/SignIn.tsx",
-                                            lineNumber: 280,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Input, {
-                                            id: "email",
-                                            type: "email",
-                                            placeholder: "example@email.com",
-                                            required: true
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/SignIn.tsx",
-                                            lineNumber: 281,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/SignIn.tsx",
-                                    lineNumber: 279,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Label, {
-                                            htmlFor: "password",
-                                            children: t('signIn.password')
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/SignIn.tsx",
-                                            lineNumber: 290,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputWrapper, {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Input, {
-                                                    id: "password",
-                                                    type: showPassword ? "text" : "password",
-                                                    placeholder: "••••••••",
-                                                    required: true
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/SignIn.tsx",
-                                                    lineNumber: 292,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PasswordButton, {
-                                                    type: "button",
-                                                    onClick: togglePasswordVisibility,
-                                                    "aria-label": showPassword ? "Hide password" : "Show password",
-                                                    children: showPassword ? "👁️" : "👁️‍🗨️"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/SignIn.tsx",
-                                                    lineNumber: 298,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/SignIn.tsx",
-                                            lineNumber: 291,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ForgotPasswordLink, {
-                                            href: "#",
-                                            children: t('signIn.forgotPassword')
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/SignIn.tsx",
-                                            lineNumber: 306,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/SignIn.tsx",
-                                    lineNumber: 289,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SignInButton, {
-                                    type: "submit",
-                                    children: t('signIn.signInButton')
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/SignIn.tsx",
-                                    lineNumber: 309,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/SignIn.tsx",
-                            lineNumber: 278,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FooterText, {
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "#",
-                                children: t('signIn.dontHaveAccount')
-                            }, void 0, false, {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FormSection, {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Label, {
+                                                htmlFor: "emailOrUsername",
+                                                children: t('signIn.emailOrUsername')
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/SignIn.tsx",
+                                                lineNumber: 334,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Input, {
+                                                id: "emailOrUsername",
+                                                type: "text",
+                                                placeholder: "example@email.com",
+                                                required: true
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/SignIn.tsx",
+                                                lineNumber: 335,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/SignIn.tsx",
+                                        lineNumber: 333,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Label, {
+                                                htmlFor: "password",
+                                                children: t('signIn.password')
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/SignIn.tsx",
+                                                lineNumber: 344,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputWrapper, {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Input, {
+                                                        id: "password",
+                                                        type: showPassword ? "text" : "password",
+                                                        placeholder: "••••••••",
+                                                        required: true
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/SignIn.tsx",
+                                                        lineNumber: 346,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PasswordButton, {
+                                                        type: "button",
+                                                        onClick: togglePasswordVisibility,
+                                                        "aria-label": showPassword ? "Hide password" : "Show password",
+                                                        children: showPassword ? "👁️" : "👁️‍🗨️"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/SignIn.tsx",
+                                                        lineNumber: 352,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/SignIn.tsx",
+                                                lineNumber: 345,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/SignIn.tsx",
+                                        lineNumber: 343,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ForgotPasswordLink, {
+                                        href: "#",
+                                        children: t('signIn.forgotPassword')
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/SignIn.tsx",
+                                        lineNumber: 362,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SignInButton, {
+                                        type: "submit",
+                                        children: t('signIn.submit')
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/SignIn.tsx",
+                                        lineNumber: 366,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/src/components/SignIn.tsx",
-                                lineNumber: 315,
+                                lineNumber: 332,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/SignIn.tsx",
-                            lineNumber: 314,
+                            lineNumber: 331,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SignUpPrompt, {
+                            children: [
+                                t('signIn.noAccount'),
+                                " ",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SignUpLink, {
+                                    href: "/signup",
+                                    children: t('signIn.signUp')
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/SignIn.tsx",
+                                    lineNumber: 373,
+                                    columnNumber: 37
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/SignIn.tsx",
+                            lineNumber: 372,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/SignIn.tsx",
-                    lineNumber: 249,
+                    lineNumber: 302,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/SignIn.tsx",
-                lineNumber: 248,
+                lineNumber: 301,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/SignIn.tsx",
-        lineNumber: 239,
+        lineNumber: 292,
         columnNumber: 5
     }, this);
 };
-_s(SignIn, "j3nNyFYfnJZxk3H41WeJqUTzf+k=", false, function() {
+_s(SignIn, "0NmqqFuI/cBVNvQwqgL4yz6qQo8=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslation"]
     ];
 });
-_c18 = SignIn;
+_c20 = SignIn;
 const __TURBOPACK__default__export__ = SignIn;
-var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11, _c12, _c13, _c14, _c15, _c16, _c17, _c18;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11, _c12, _c13, _c14, _c15, _c16, _c17, _c18, _c19, _c20;
 __turbopack_context__.k.register(_c, "PageContainer");
 __turbopack_context__.k.register(_c1, "Header");
 __turbopack_context__.k.register(_c2, "Logo");
@@ -1011,17 +1069,19 @@ __turbopack_context__.k.register(_c4, "MainContent");
 __turbopack_context__.k.register(_c5, "SignInCard");
 __turbopack_context__.k.register(_c6, "Title");
 __turbopack_context__.k.register(_c7, "Form");
-__turbopack_context__.k.register(_c8, "InputGroup");
-__turbopack_context__.k.register(_c9, "Label");
-__turbopack_context__.k.register(_c10, "InputWrapper");
-__turbopack_context__.k.register(_c11, "Input");
-__turbopack_context__.k.register(_c12, "PasswordButton");
-__turbopack_context__.k.register(_c13, "SignInButton");
-__turbopack_context__.k.register(_c14, "Divider");
-__turbopack_context__.k.register(_c15, "GoogleButton");
-__turbopack_context__.k.register(_c16, "ForgotPasswordLink");
-__turbopack_context__.k.register(_c17, "FooterText");
-__turbopack_context__.k.register(_c18, "SignIn");
+__turbopack_context__.k.register(_c8, "FormSection");
+__turbopack_context__.k.register(_c9, "InputGroup");
+__turbopack_context__.k.register(_c10, "Label");
+__turbopack_context__.k.register(_c11, "InputWrapper");
+__turbopack_context__.k.register(_c12, "Input");
+__turbopack_context__.k.register(_c13, "PasswordButton");
+__turbopack_context__.k.register(_c14, "GoogleButton");
+__turbopack_context__.k.register(_c15, "SignInButton");
+__turbopack_context__.k.register(_c16, "Divider");
+__turbopack_context__.k.register(_c17, "ForgotPasswordLink");
+__turbopack_context__.k.register(_c18, "SignUpPrompt");
+__turbopack_context__.k.register(_c19, "SignUpLink");
+__turbopack_context__.k.register(_c20, "SignIn");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
@@ -1030,17 +1090,17 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.v(JSON.parse("{\"signIn\":{\"title\":\"Sign In\",\"email\":\"Email\",\"password\":\"Password\",\"signInButton\":\"Sign In\",\"signInWithGoogle\":\"Sign in with Google\",\"forgotPassword\":\"Forgot password?\",\"dontHaveAccount\":\"Don't have an account?\"},\"header\":{\"darkMode\":\"Dark Mode\",\"language\":\"Language\"}}"));}}),
+__turbopack_context__.v(JSON.parse("{\"signIn\":{\"title\":\"Sign In\",\"emailOrUsername\":\"Email or Username\",\"password\":\"Password\",\"forgotPassword\":\"Forgot password?\",\"submit\":\"Sign In\",\"signInWithGoogle\":\"Sign In with Google\",\"noAccount\":\"Don't have an account?\",\"signUp\":\"Sign Up\",\"accountInformation\":\"Account Information\"},\"signUp\":{\"title\":\"Sign Up\",\"emailOrUsername\":\"Email or Username\",\"password\":\"Password\",\"confirmPassword\":\"Confirm Password\",\"accountInformation\":\"Account Information\",\"additionalInfo\":\"Additional Information\",\"firstName\":\"First Name\",\"firstNamePlaceholder\":\"John\",\"lastName\":\"Last Name\",\"lastNamePlaceholder\":\"Doe\",\"personalNumber\":\"Personal ID\",\"personalNumberPlaceholder\":\"Enter your personal ID number\",\"phoneNumber1\":\"Phone Number\",\"phoneNumber2\":\"Alternative Phone Number\",\"birthDate\":\"Birth Date\",\"avatar\":\"Profile Picture\",\"chooseFile\":\"Choose File\",\"submit\":\"Sign Up\",\"signUpWithGoogle\":\"Sign Up with Google\",\"alreadyHaveAccount\":\"Already have an account?\",\"signIn\":\"Sign In\"},\"header\":{\"darkMode\":\"Dark Mode\",\"language\":\"Language\"}}"));}}),
 "[project]/src/locales/ru/translation.json (json)": ((__turbopack_context__) => {
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.v(JSON.parse("{\"signIn\":{\"title\":\"Вход в систему\",\"email\":\"Электронная почта\",\"password\":\"Пароль\",\"signInButton\":\"Войти\",\"signInWithGoogle\":\"Войти через Google\",\"forgotPassword\":\"Забыли пароль?\",\"dontHaveAccount\":\"Нет аккаунта?\"},\"header\":{\"darkMode\":\"Темный режим\",\"language\":\"Язык\"}}"));}}),
+__turbopack_context__.v(JSON.parse("{\"signIn\":{\"title\":\"Вход\",\"emailOrUsername\":\"Email или имя пользователя\",\"password\":\"Пароль\",\"forgotPassword\":\"Забыли пароль?\",\"submit\":\"Войти\",\"signInWithGoogle\":\"Войти с Google\",\"noAccount\":\"Нет аккаунта?\",\"signUp\":\"Регистрация\",\"accountInformation\":\"Информация об аккаунте\"},\"signUp\":{\"title\":\"Регистрация\",\"emailOrUsername\":\"Email или имя пользователя\",\"password\":\"Пароль\",\"confirmPassword\":\"Подтвердите пароль\",\"accountInformation\":\"Информация об аккаунте\",\"additionalInfo\":\"Дополнительная информация\",\"firstName\":\"Имя\",\"firstNamePlaceholder\":\"Иван\",\"lastName\":\"Фамилия\",\"lastNamePlaceholder\":\"Иванов\",\"personalNumber\":\"Персональный номер\",\"personalNumberPlaceholder\":\"Введите ваш персональный ID\",\"phoneNumber1\":\"Номер телефона\",\"phoneNumber2\":\"Дополнительный номер\",\"birthDate\":\"Дата рождения\",\"avatar\":\"Фотография профиля\",\"chooseFile\":\"Выбрать файл\",\"submit\":\"Зарегистрироваться\",\"signUpWithGoogle\":\"Регистрация с Google\",\"alreadyHaveAccount\":\"Уже есть аккаунт?\",\"signIn\":\"Войти\"},\"header\":{\"darkMode\":\"Темный режим\",\"language\":\"Язык\"}}"));}}),
 "[project]/src/locales/ka/translation.json (json)": ((__turbopack_context__) => {
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.v(JSON.parse("{\"signIn\":{\"title\":\"შესვლა\",\"email\":\"ელ.ფოსტა\",\"password\":\"პაროლი\",\"signInButton\":\"შესვლა\",\"signInWithGoogle\":\"Google-ით შესვლა\",\"forgotPassword\":\"დაგავიწყდათ პაროლი?\",\"dontHaveAccount\":\"არ გაქვთ ანგარიში?\"},\"header\":{\"darkMode\":\"ბნელი რეჟიმი\",\"language\":\"ენა\"}}"));}}),
+__turbopack_context__.v(JSON.parse("{\"signIn\":{\"title\":\"ავტორიზაცია\",\"emailOrUsername\":\"ელ.ფოსტა ან მომხმარებლის სახელი\",\"password\":\"პაროლი\",\"forgotPassword\":\"დაგავიწყდათ პაროლი?\",\"submit\":\"შესვლა\",\"signInWithGoogle\":\"Google-ით შესვლა\",\"noAccount\":\"არ გაქვთ ანგარიში?\",\"signUp\":\"რეგისტრაცია\",\"accountInformation\":\"ანგარიშის ინფორმაცია\"},\"signUp\":{\"title\":\"რეგისტრაცია\",\"emailOrUsername\":\"ელ.ფოსტა ან მომხმარებლის სახელი\",\"password\":\"პაროლი\",\"confirmPassword\":\"გაიმეორეთ პაროლი\",\"accountInformation\":\"ანგარიშის ინფორმაცია\",\"additionalInfo\":\"დამატებითი ინფორმაცია\",\"firstName\":\"სახელი\",\"firstNamePlaceholder\":\"გიორგი\",\"lastName\":\"გვარი\",\"lastNamePlaceholder\":\"გიორგაძე\",\"personalNumber\":\"პირადი ნომერი\",\"personalNumberPlaceholder\":\"შეიყვანეთ თქვენი პირადი ნომერი\",\"phoneNumber1\":\"ტელეფონის ნომერი\",\"phoneNumber2\":\"ალტერნატიული ნომერი\",\"birthDate\":\"დაბადების თარიღი\",\"avatar\":\"პროფილის სურათი\",\"chooseFile\":\"აირჩიეთ ფაილი\",\"submit\":\"რეგისტრაცია\",\"signUpWithGoogle\":\"Google-ით რეგისტრაცია\",\"alreadyHaveAccount\":\"უკვე გაქვთ ანგარიში?\",\"signIn\":\"ავტორიზაცია\"},\"header\":{\"darkMode\":\"ბნელი რეჟიმი\",\"language\":\"ენა\"}}"));}}),
 "[project]/src/i18n.ts [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 

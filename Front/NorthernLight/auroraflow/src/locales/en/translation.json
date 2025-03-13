@@ -1,12 +1,37 @@
 {
   "signIn": {
     "title": "Sign In",
-    "email": "Email",
+    "emailOrUsername": "Email or Username",
     "password": "Password",
-    "signInButton": "Sign In",
-    "signInWithGoogle": "Sign in with Google",
     "forgotPassword": "Forgot password?",
-    "dontHaveAccount": "Don't have an account?"
+    "submit": "Sign In",
+    "signInWithGoogle": "Sign In with Google",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "accountInformation": "Account Information"
+  },
+  "signUp": {
+    "title": "Sign Up",
+    "emailOrUsername": "Email or Username",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "accountInformation": "Account Information",
+    "additionalInfo": "Additional Information",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "John",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Doe",
+    "personalNumber": "Personal ID",
+    "personalNumberPlaceholder": "Enter your personal ID number",
+    "phoneNumber1": "Phone Number",
+    "phoneNumber2": "Alternative Phone Number",
+    "birthDate": "Birth Date",
+    "avatar": "Profile Picture",
+    "chooseFile": "Choose File",
+    "submit": "Sign Up",
+    "signUpWithGoogle": "Sign Up with Google",
+    "alreadyHaveAccount": "Already have an account?",
+    "signIn": "Sign In"
   },
   "header": {
     "darkMode": "Dark Mode",

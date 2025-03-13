@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSelector } from './LanguageSelector';
+import Link from 'next/link';
 
 const PageContainer = styled.div`
   display: flex;
@@ -23,6 +24,8 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  position: relative;
+  z-index: 10;
 `;
 
 const Logo = styled.h1`
@@ -38,6 +41,10 @@ const Logo = styled.h1`
 const HeaderControls = styled.div`
   display: flex;
   align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 11;
+  pointer-events: auto;
 `;
 
 const MainContent = styled.main`
@@ -80,16 +87,24 @@ const Form = styled.form`
   gap: 1.25rem;
 `;
 
+const FormSection = styled.div`
+  margin-bottom: 1.5rem;
+`;
+
 const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  margin-bottom: 1rem;
 `;
 
 const Label = styled.label`
   color: ${({ theme }) => theme.text};
   font-size: 0.79rem;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 1.2em;
 `;
 
 const InputWrapper = styled.div`
@@ -128,14 +143,42 @@ const PasswordButton = styled.button`
   transform: translateY(-50%);
 `;
 
+const GoogleButton = styled.button`
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  color: #4b5563;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: #f9fafb;
+  }
+  
+  svg {
+    height: 1.35rem;
+    width: 1.35rem;
+  }
+`;
+
 const SignInButton = styled.button`
+  width: 100%;
   background: linear-gradient(to right, ${({ theme }) => theme.primary}, ${({ theme }) => theme.secondary});
   border: none;
   border-radius: 0.375rem;
   color: ${({ theme }) => theme.buttonText};
   cursor: pointer;
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 0.5rem;
   padding: 0.75rem;
   transition: opacity 0.2s ease;
@@ -161,33 +204,6 @@ const Divider = styled.div`
     font-size: 0.79rem;
     font-weight: 400;
     padding: 0 1rem;
-  }
-`;
-
-const GoogleButton = styled.button`
-  background-color: white;
-  border: 1px solid #d1d5db;
-  border-radius: 0.375rem;
-  color: #4b5563;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 400;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  width: 100%;
-  margin-bottom: 0.5rem;
-  transition: background-color 0.2s ease;
-  
-  &:hover {
-    background-color: #f9fafb;
-  }
-  
-  svg {
-    height: 1.35rem;
-    width: 1.35rem;
   }
 `;
 
@@ -222,9 +238,42 @@ const FooterText = styled.p`
   }
 `;
 
+interface ButtonsGridProps {
+  isGeorgian?: boolean;
+}
+
+const ButtonsGrid = styled.div<ButtonsGridProps>`
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1.5rem;
+  
+  @media (max-width: 500px) {
+    flex-direction: ${({ isGeorgian }) => isGeorgian ? 'column' : 'row'};
+  }
+`;
+
+const SignUpPrompt = styled.div`
+  margin-top: 1rem;
+  text-align: center;
+  color: ${({ theme }) => theme.textSecondary};
+  font-size: 0.65rem;
+`;
+
+const SignUpLink = styled(Link)`
+  color: ${({ theme }) => theme.primary};
+  font-weight: 500;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const SignIn: React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isGeorgian = i18n.language === 'ka';
   
   const togglePasswordVisibility = (): void => {
     setShowPassword(!showPassword);
@@ -233,6 +282,10 @@ const SignIn: React.FC = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     // Add sign-in logic here
+  };
+  
+  const handleGoogleSignIn = (): void => {
+    // Add Google sign-in logic here
   };
   
   return (
@@ -249,7 +302,7 @@ const SignIn: React.FC = () => {
         <SignInCard>
           <Title>{t('signIn.title')}</Title>
           
-          <GoogleButton type="button">
+          <GoogleButton type="button" onClick={handleGoogleSignIn}>
             <svg viewBox="0 0 24 24">
               <path 
                 fill="#4285F4" 
@@ -276,44 +329,49 @@ const SignIn: React.FC = () => {
           </Divider>
           
           <Form onSubmit={handleSubmit}>
-            <InputGroup>
-              <Label htmlFor="email">{t('signIn.email')}</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="example@email.com"
-                required
-              />
-            </InputGroup>
-            
-            <InputGroup>
-              <Label htmlFor="password">{t('signIn.password')}</Label>
-              <InputWrapper>
+            <FormSection>
+              <InputGroup>
+                <Label htmlFor="emailOrUsername">{t('signIn.emailOrUsername')}</Label>
                 <Input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
+                  id="emailOrUsername"
+                  type="text"
+                  placeholder="example@email.com"
                   required
                 />
-                <PasswordButton
-                  type="button"
-                  onClick={togglePasswordVisibility}
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                >
-                  {showPassword ? "👁️" : "👁️‍🗨️"}
-                </PasswordButton>
-              </InputWrapper>
-              <ForgotPasswordLink href="#">{t('signIn.forgotPassword')}</ForgotPasswordLink>
-            </InputGroup>
-            
-            <SignInButton type="submit">
-              {t('signIn.signInButton')}
-            </SignInButton>
+              </InputGroup>
+              
+              <InputGroup>
+                <Label htmlFor="password">{t('signIn.password')}</Label>
+                <InputWrapper>
+                  <Input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="••••••••"
+                    required
+                  />
+                  <PasswordButton
+                    type="button"
+                    onClick={togglePasswordVisibility}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                  >
+                    {showPassword ? "👁️" : "👁️‍🗨️"}
+                  </PasswordButton>
+                </InputWrapper>
+              </InputGroup>
+              
+              <ForgotPasswordLink href="#">
+                {t('signIn.forgotPassword')}
+              </ForgotPasswordLink>
+              
+              <SignInButton type="submit">
+                {t('signIn.submit')}
+              </SignInButton>
+            </FormSection>
           </Form>
           
-          <FooterText>
-            <a href="#">{t('signIn.dontHaveAccount')}</a>
-          </FooterText>
+          <SignUpPrompt>
+            {t('signIn.noAccount')} <SignUpLink href="/signup">{t('signIn.signUp')}</SignUpLink>
+          </SignUpPrompt>
         </SignInCard>
       </MainContent>
     </PageContainer>
