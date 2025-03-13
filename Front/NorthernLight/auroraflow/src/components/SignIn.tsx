@@ -10,7 +10,9 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: ${({ theme }) => theme.background};
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
   color: ${({ theme }) => theme.text};
   transition: background-color 0.2s ease, color 0.2s ease;
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -49,11 +51,18 @@ const MainContent = styled.main`
 const SignInCard = styled.div`
   background-color: ${({ theme }) => theme.cardBackground};
   border-radius: 0.75rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 0 40px rgba(0, 0, 0, 0.08);
   padding: 2.5rem;
   width: 100%;
   max-width: 28rem;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  
+  &:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 45px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 const Title = styled.h2`

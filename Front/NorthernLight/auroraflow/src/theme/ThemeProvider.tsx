@@ -27,7 +27,7 @@ interface ThemeProviderProps {
 const lightTheme: ThemeProps = {
   primary: '#7c3aed', // violet
   secondary: '#3b82f6', // blue
-  background: '#ffffff',
+  background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(249,250,251,0.95) 100%)',
   cardBackground: '#f9fafb',
   text: '#111827',
   inputBorder: '#d1d5db',
@@ -39,7 +39,7 @@ const lightTheme: ThemeProps = {
 const darkTheme: ThemeProps = {
   primary: '#8b5cf6', // lighter violet for dark mode
   secondary: '#60a5fa', // lighter blue for dark mode
-  background: '#111827',
+  background: 'linear-gradient(135deg, rgba(17,24,39,0.9) 0%, rgba(31,41,55,0.95) 100%)',
   cardBackground: '#1f2937',
   text: '#f9fafb',
   inputBorder: '#374151',
@@ -57,11 +57,26 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   
   useEffect(() => {
+    // Check for saved theme
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDarkMode(true);
+    
+    // Check for system preference if no saved theme
+    if (!savedTheme) {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setIsDarkMode(prefersDark);
+    } else {
+      setIsDarkMode(savedTheme === 'dark');
     }
   }, []);
+  
+  useEffect(() => {
+    // Update the data-theme attribute on the document body
+    if (isDarkMode) {
+      document.body.setAttribute('data-theme', 'dark');
+    } else {
+      document.body.setAttribute('data-theme', 'light');
+    }
+  }, [isDarkMode]);
   
   const toggleTheme = (): void => {
     setIsDarkMode(!isDarkMode);

@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bg-gradient-from: rgba(255, 255, 255, 0.95);
+  --bg-gradient-to: rgba(249, 250, 251, 0.98);
+}
+
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --bg-gradient-from: rgba(17, 24, 39, 0.95);
+  --bg-gradient-to: rgba(31, 41, 55, 0.98);
 }
 
 @theme inline {
@@ -12,15 +21,31 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Add some styles to see the bubbles better */
+html, body {
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, var(--bg-gradient-from) 0%, var(--bg-gradient-to) 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Make sure all background content is behind other elements but still visible */
+#background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
 }

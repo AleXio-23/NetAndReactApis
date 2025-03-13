@@ -480,19 +480,42 @@
 :root {
   --background: #fff;
   --foreground: #171717;
+  --bg-gradient-from: #fffffff2;
+  --bg-gradient-to: #f9fafbfa;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --bg-gradient-from: #111827f2;
+  --bg-gradient-to: #1f2937fa;
+}
+
+html, body {
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, var(--bg-gradient-from) 0%, var(--bg-gradient-to) 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  min-height: 100vh;
+  transition: background-color .3s, color .3s;
+}
+
+#background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 @property --tw-rotate-x {
