@@ -144,10 +144,10 @@ const PasswordButton = styled.button`
 `;
 
 const GoogleButton = styled.button`
-  background-color: white;
-  border: 1px solid #d1d5db;
+  background-color: ${({ theme }) => theme.cardBackground};
+  border: 1px solid ${({ theme }) => theme.inputBorder};
   border-radius: 0.375rem;
-  color: #4b5563;
+  color: ${({ theme }) => theme.text};
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -158,15 +158,17 @@ const GoogleButton = styled.button`
   padding: 0.75rem;
   width: 100%;
   margin-bottom: 1.5rem;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   
   &:hover {
-    background-color: #f9fafb;
+    background-color: ${({ theme }) => theme.backgroundSecondary || theme.cardBackground};
+    border-color: ${({ theme }) => theme.primary};
   }
   
   svg {
     height: 1.35rem;
     width: 1.35rem;
+    filter: ${({ theme }) => theme.type === 'dark' ? 'drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.5))' : 'none'};
   }
 `;
 

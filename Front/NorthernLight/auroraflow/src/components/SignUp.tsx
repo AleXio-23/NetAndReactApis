@@ -206,27 +206,29 @@ const SignUpButton = styled.button`
 
 const GoogleButton = styled.button`
   flex: 1;
-  background-color: white;
-  border: 1px solid #d1d5db;
+  background-color: ${({ theme }) => theme.cardBackground};
+  border: 1px solid ${({ theme }) => theme.inputBorder};
   border-radius: 0.375rem;
-  color: #4b5563;
+  color: ${({ theme }) => theme.text};
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
   gap: 0.75rem;
   padding: 0.75rem;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   
   &:hover {
-    background-color: #f9fafb;
+    background-color: ${({ theme }) => theme.backgroundSecondary || theme.cardBackground};
+    border-color: ${({ theme }) => theme.primary};
   }
   
   svg {
     height: 1.35rem;
     width: 1.35rem;
+    filter: ${({ theme }) => theme.type === 'dark' ? 'drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.5))' : 'none'};
   }
 `;
 
@@ -319,41 +321,80 @@ const AvatarPlaceholder = styled.div`
   align-items: center;
   font-size: 2rem;
   color: ${({ theme }) => theme.textSecondary};
-  overflow: hidden;
   position: relative;
   border: none;
 `;
 
-const AvatarPreview = styled.img`
-  width: 100%;
-  height: 100%;
+const AvatarPreview = styled.div`
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 const FileInputLabel = styled.label`
-  color: ${({ theme }) => theme.primary};
-  font-size: 0.85rem;
+  color: ${({ theme }) => theme.buttonText};
+  font-size: 0.75rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 120px;
+  max-width: 100px;
   padding: 6px 12px;
-  border-radius: 4px;
-  background-color: transparent;
+  border-radius: 6px;
+  background: linear-gradient(to right, ${({ theme }) => theme.primary}, ${({ theme }) => theme.secondary});
   border: none;
-  text-decoration: underline;
   transition: all 0.2s ease;
+  text-align: center;
   
   &:hover {
-    color: ${({ theme }) => theme.secondary};
+    opacity: 0.9;
   }
 `;
 
 const HiddenFileInput = styled.input`
   display: none;
+`;
+
+const RemovePhotoButton = styled.button`
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.primary || '#6366f1'};
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  z-index: 100;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  
+  &:hover {
+    background-color: ${({ theme }) => theme.secondary || '#818cf8'};
+    transform: scale(1.1);
+    opacity: 1;
+  }
 `;
 
 const AvatarSection = styled.div`
@@ -382,6 +423,7 @@ const CircleBorder = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  position: relative;
 `;
 
 // Add this new component for the picture+name layout
@@ -454,6 +496,10 @@ const SignUp: React.FC = () => {
       
       reader.readAsDataURL(file);
     }
+  };
+
+  const handleRemoveAvatar = (): void => {
+    setAvatarPreview(null);
   };
   
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
@@ -598,13 +644,33 @@ const SignUp: React.FC = () => {
                   <Label htmlFor="avatar">{t('signUp.avatar')}</Label>
                   <AvatarSection>
                     <CircleBorder>
-                      <AvatarPlaceholder>
-                        {avatarPreview ? (
-                          <AvatarPreview src={avatarPreview} alt="Avatar preview" />
-                        ) : (
-                          "👤"
-                        )}
-                      </AvatarPlaceholder>
+                      {avatarPreview ? (
+                        <>
+                          <AvatarPlaceholder style={{ overflow: 'hidden' }}>
+                            <img 
+                              src={avatarPreview} 
+                              alt="Avatar preview" 
+                              style={{ 
+                                width: '100%', 
+                                height: '100%', 
+                                objectFit: 'cover',
+                                borderRadius: '50%'
+                              }} 
+                            />
+                          </AvatarPlaceholder>
+                          <RemovePhotoButton 
+                            type="button" 
+                            onClick={handleRemoveAvatar}
+                            aria-label="Remove photo"
+                          >
+                            ×
+                          </RemovePhotoButton>
+                        </>
+                      ) : (
+                        <AvatarPlaceholder>
+                          👤
+                        </AvatarPlaceholder>
+                      )}
                     </CircleBorder>
                     <FileInputLabel htmlFor="avatar">
                       {t('signUp.chooseFile')}
