@@ -1,0 +1,15 @@
+{
+  "signIn": {
+    "title": "Sign In",
+    "email": "Email",
+    "password": "Password",
+    "signInButton": "Sign In",
+    "signInWithGoogle": "Sign in with Google",
+    "forgotPassword": "Forgot password?",
+    "dontHaveAccount": "Don't have an account?"
+  },
+  "header": {
+    "darkMode": "Dark Mode",
+    "language": "Language"
+  }
+} 

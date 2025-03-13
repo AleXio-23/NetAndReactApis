@@ -1,0 +1,15 @@
+{
+  "signIn": {
+    "title": "Вход в систему",
+    "email": "Электронная почта",
+    "password": "Пароль",
+    "signInButton": "Войти",
+    "signInWithGoogle": "Войти через Google",
+    "forgotPassword": "Забыли пароль?",
+    "dontHaveAccount": "Нет аккаунта?"
+  },
+  "header": {
+    "darkMode": "Темный режим",
+    "language": "Язык"
+  }
+} 

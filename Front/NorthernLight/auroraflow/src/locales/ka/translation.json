@@ -1,0 +1,15 @@
+{
+  "signIn": {
+    "title": "შესვლა",
+    "email": "ელ.ფოსტა",
+    "password": "პაროლი",
+    "signInButton": "შესვლა",
+    "signInWithGoogle": "Google-ით შესვლა",
+    "forgotPassword": "დაგავიწყდათ პაროლი?",
+    "dontHaveAccount": "არ გაქვთ ანგარიში?"
+  },
+  "header": {
+    "darkMode": "ბნელი რეჟიმი",
+    "language": "ენა"
+  }
+} 
