@@ -41,6 +41,7 @@ const MainContent = styled.main`
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  margin-top: -5vh; /* Move the content up by 5% of viewport height */
 `;
 
 const SignInCard = styled.div`
@@ -112,6 +113,19 @@ const PasswordButton = styled.button`
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
+`;
+
+const ForgotPasswordLink = styled.a`
+  color: ${({ theme }) => theme.primary};
+  font-size: 0.75rem;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+  
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const SignInButton = styled.button`
@@ -246,6 +260,7 @@ const SignIn: React.FC = () => {
                   {showPassword ? "👁️" : "👁️‍🗨️"}
                 </PasswordButton>
               </InputWrapper>
+              <ForgotPasswordLink href="#">{t('signIn.forgotPassword')}</ForgotPasswordLink>
             </InputGroup>
             
             <SignInButton type="submit">
@@ -280,7 +295,7 @@ const SignIn: React.FC = () => {
           </GoogleButton>
           
           <FooterText>
-            <a href="#">{t('signIn.forgotPassword')}</a> • <a href="#">{t('signIn.dontHaveAccount')}</a>
+            <a href="#">{t('signIn.dontHaveAccount')}</a>
           </FooterText>
         </SignInCard>
       </MainContent>
