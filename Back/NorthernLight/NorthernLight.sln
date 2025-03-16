@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{CD701621-4EA6-4372-9933-C8DF76F10ED3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthernLight.Auth", "NorthernLight.Auth\NorthernLight.Auth.csproj", "{80E728C0-5C6D-4E2E-B392-72DA04E2B1CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthernLight.Auth", "GlobalAuthorization\NorthernLight.Auth\NorthernLight.Auth.csproj", "{80E728C0-5C6D-4E2E-B392-72DA04E2B1CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{D91E3AD5-0EEE-4386-A20B-E0B0CD91556E}"
 EndProject
@@ -13,13 +13,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistance", "Persistance"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D5230164-1BAA-498C-A089-11B17808A474}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthernLight.Auth.Persistence", "NorthernLight.Auth.Persistence\NorthernLight.Auth.Persistence.csproj", "{2B7DD0D9-1562-468B-BEFD-09B311B73807}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthernLight.Auth.Persistence", "GlobalAuthorization\NorthernLight.Auth.Persistence\NorthernLight.Auth.Persistence.csproj", "{2B7DD0D9-1562-468B-BEFD-09B311B73807}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthernLight.Auth.Domain", "NorthernLight.Auth.Domain\NorthernLight.Auth.Domain.csproj", "{FE6DE734-CFC4-42DB-9897-A86C09979C11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthernLight.Auth.Domain", "GlobalAuthorization\NorthernLight.Auth.Domain\NorthernLight.Auth.Domain.csproj", "{FE6DE734-CFC4-42DB-9897-A86C09979C11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthernLight.Auth.Shared", "NorthernLight.Auth.Shared\NorthernLight.Auth.Shared.csproj", "{FAE8440E-A4E7-4813-9CDA-3C57FD567EA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthernLight.Auth.Shared", "GlobalAuthorization\NorthernLight.Auth.Shared\NorthernLight.Auth.Shared.csproj", "{FAE8440E-A4E7-4813-9CDA-3C57FD567EA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthernLight.Auth.Application", "NorthernLight.Auth.Application\NorthernLight.Auth.Application.csproj", "{E65DC88E-501F-46BE-BB39-4AF2B45526DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthernLight.Auth.Application", "GlobalAuthorization\NorthernLight.Auth.Application\NorthernLight.Auth.Application.csproj", "{E65DC88E-501F-46BE-BB39-4AF2B45526DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuroraFlow", "AuroraFlow", "{686EA101-A132-4C00-AB3C-A3079805BA05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{74A4651A-2ACE-4278-B82A-2A4BD03633AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuroraFlow.API", "AuroraFlow\AuroraFlow.API\AuroraFlow.API.csproj", "{726B07EB-68DE-4DE9-940D-0C07B0A4997B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistance", "Persistance", "{31FBD7C9-FC95-4E11-9A24-6D008E7C7460}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuroraFlow.Persistance", "AuroraFlow\AuroraFlow.Persistance\AuroraFlow.Persistance.csproj", "{FFF90C93-30E4-48CE-880E-8D77AE7E4753}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{B1F15E31-8D87-46DA-BD5F-18BB483184E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuroraFlow.Application", "AuroraFlow\AuroraFlow.Application\AuroraFlow.Application.csproj", "{2AA0A6CF-0D3F-4D01-A330-1E16DD13850E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuroraFlow.Domain", "AuroraFlow\AuroraFlow.Domain\AuroraFlow.Domain.csproj", "{03701BD3-DC09-427D-A5CE-6CFBCE4CC1DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuroraFlow.Shared", "AuroraFlow\AuroraFlow.Shared\AuroraFlow.Shared.csproj", "{F563A7C9-8514-468C-8449-767218643601}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +65,26 @@ Global
 		{E65DC88E-501F-46BE-BB39-4AF2B45526DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E65DC88E-501F-46BE-BB39-4AF2B45526DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E65DC88E-501F-46BE-BB39-4AF2B45526DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{726B07EB-68DE-4DE9-940D-0C07B0A4997B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{726B07EB-68DE-4DE9-940D-0C07B0A4997B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{726B07EB-68DE-4DE9-940D-0C07B0A4997B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{726B07EB-68DE-4DE9-940D-0C07B0A4997B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFF90C93-30E4-48CE-880E-8D77AE7E4753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFF90C93-30E4-48CE-880E-8D77AE7E4753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFF90C93-30E4-48CE-880E-8D77AE7E4753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFF90C93-30E4-48CE-880E-8D77AE7E4753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AA0A6CF-0D3F-4D01-A330-1E16DD13850E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AA0A6CF-0D3F-4D01-A330-1E16DD13850E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AA0A6CF-0D3F-4D01-A330-1E16DD13850E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AA0A6CF-0D3F-4D01-A330-1E16DD13850E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03701BD3-DC09-427D-A5CE-6CFBCE4CC1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03701BD3-DC09-427D-A5CE-6CFBCE4CC1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03701BD3-DC09-427D-A5CE-6CFBCE4CC1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03701BD3-DC09-427D-A5CE-6CFBCE4CC1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F563A7C9-8514-468C-8449-767218643601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F563A7C9-8514-468C-8449-767218643601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F563A7C9-8514-468C-8449-767218643601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F563A7C9-8514-468C-8449-767218643601}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +98,14 @@ Global
 		{FE6DE734-CFC4-42DB-9897-A86C09979C11} = {8B2130E3-006F-4639-AEC2-DEAF304AD0BF}
 		{FAE8440E-A4E7-4813-9CDA-3C57FD567EA4} = {D91E3AD5-0EEE-4386-A20B-E0B0CD91556E}
 		{E65DC88E-501F-46BE-BB39-4AF2B45526DB} = {D91E3AD5-0EEE-4386-A20B-E0B0CD91556E}
+		{74A4651A-2ACE-4278-B82A-2A4BD03633AC} = {686EA101-A132-4C00-AB3C-A3079805BA05}
+		{726B07EB-68DE-4DE9-940D-0C07B0A4997B} = {74A4651A-2ACE-4278-B82A-2A4BD03633AC}
+		{31FBD7C9-FC95-4E11-9A24-6D008E7C7460} = {686EA101-A132-4C00-AB3C-A3079805BA05}
+		{FFF90C93-30E4-48CE-880E-8D77AE7E4753} = {31FBD7C9-FC95-4E11-9A24-6D008E7C7460}
+		{B1F15E31-8D87-46DA-BD5F-18BB483184E1} = {686EA101-A132-4C00-AB3C-A3079805BA05}
+		{2AA0A6CF-0D3F-4D01-A330-1E16DD13850E} = {B1F15E31-8D87-46DA-BD5F-18BB483184E1}
+		{03701BD3-DC09-427D-A5CE-6CFBCE4CC1DA} = {31FBD7C9-FC95-4E11-9A24-6D008E7C7460}
+		{F563A7C9-8514-468C-8449-767218643601} = {B1F15E31-8D87-46DA-BD5F-18BB483184E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F203C2E-3FFA-44D7-9F40-83130B24310B}
