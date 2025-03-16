@@ -31,25 +31,25 @@ const BubbleContainer = styled.div`
 `;
 
 interface BubbleProps {
-  size: number;
-  positionX: number;
-  positionY: number;
-  delay: number;
-  duration: number;
-  color: string;
+  $size: number;
+  $positionX: number;
+  $positionY: number;
+  $delay: number;
+  $duration: number;
+  $color: string;
 }
 
 const Bubble = styled.div<BubbleProps>`
   position: absolute;
-  bottom: ${props => props.positionY}%;
-  left: ${props => props.positionX}%;
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
+  bottom: ${props => props.$positionY}%;
+  left: ${props => props.$positionX}%;
+  width: ${props => props.$size}px;
+  height: ${props => props.$size}px;
   border-radius: 50%;
-  background-color: ${props => props.color};
+  background-color: ${props => props.$color};
   opacity: 0.14;
-  animation: ${floatAnimation} ${props => props.duration}s ease-in-out ${props => props.delay}s infinite;
-  box-shadow: 0 0 15px ${props => props.color}88;
+  animation: ${floatAnimation} ${props => props.$duration}s ease-in-out ${props => props.$delay}s infinite;
+  box-shadow: 0 0 15px ${props => props.$color}88;
 `;
 
 export const AnimatedBackground: React.FC = () => {
@@ -89,12 +89,12 @@ export const AnimatedBackground: React.FC = () => {
       return (
         <Bubble 
           key={i}
-          size={size}
-          positionX={positionX}
-          positionY={positionY}
-          delay={delay}
-          duration={duration}
-          color={color}
+          $size={size}
+          $positionX={positionX}
+          $positionY={positionY}
+          $delay={delay}
+          $duration={duration}
+          $color={color}
         />
       );
     });

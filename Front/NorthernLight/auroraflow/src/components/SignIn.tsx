@@ -209,7 +209,7 @@ const Divider = styled.div`
   }
 `;
 
-const ForgotPasswordLink = styled.a`
+const ForgotPasswordLink = styled(Link)`
   color: ${({ theme }) => theme.primary};
   font-size: 0.75rem;
   text-decoration: none;
@@ -327,7 +327,7 @@ const SignIn: React.FC = () => {
           </GoogleButton>
           
           <Divider>
-            <span>OR</span>
+            <span>{t('signIn.or', 'OR')}</span>
           </Divider>
           
           <Form onSubmit={handleSubmit}>
@@ -361,7 +361,7 @@ const SignIn: React.FC = () => {
                 </InputWrapper>
               </InputGroup>
               
-              <ForgotPasswordLink href="#">
+              <ForgotPasswordLink href="/forgot-password">
                 {t('signIn.forgotPassword')}
               </ForgotPasswordLink>
               

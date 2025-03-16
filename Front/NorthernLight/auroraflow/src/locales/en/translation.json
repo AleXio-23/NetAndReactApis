@@ -8,7 +8,8 @@
     "signInWithGoogle": "Sign In with Google",
     "noAccount": "Don't have an account?",
     "signUp": "Sign Up",
-    "accountInformation": "Account Information"
+    "accountInformation": "Account Information",
+    "or": "OR"
   },
   "signUp": {
     "title": "Sign Up",
@@ -36,5 +37,14 @@
   "header": {
     "darkMode": "Dark Mode",
     "language": "Language"
+  },
+  "forgotPassword": {
+    "title": "Reset Password",
+    "subtitle": "Enter your email address and we'll send you instructions to reset your password.",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "your-email@example.com",
+    "submit": "Send Recovery Instructions",
+    "backToSignIn": "Back to Sign In",
+    "emailSent": "Password reset instructions have been sent to {{email}}. Please check your inbox."
   }
 } 
