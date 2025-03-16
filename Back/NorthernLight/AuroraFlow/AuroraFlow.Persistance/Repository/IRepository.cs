@@ -4,9 +4,10 @@ namespace AuroraFlow.Persistance.Repository
 {
     public interface IRepository<TEntity>
     {
+        IQueryable<TEntity> All { get; }
         Task<IEnumerable<TEntity>> GetAll(CancellationToken cancellationToken);
         Task<TEntity?> Get(int id, CancellationToken cancellationToken);
-        Task<TEntity> Add(TEntity entity, CancellationToken cancellationToken);
+        Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken);
         Task<TEntity> Update(TEntity entity, CancellationToken cancellationToken);
         Task Delete(int id, CancellationToken cancellationToken);
         Task Delete(TEntity entity, CancellationToken cancellationToken);

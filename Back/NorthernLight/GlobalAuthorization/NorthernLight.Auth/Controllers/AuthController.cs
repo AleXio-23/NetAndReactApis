@@ -21,7 +21,7 @@ namespace NorthernLight.Auth.Controllers
         IChangePasswordRequestService changePasswordRequestService)
         : ControllerBase
     {
-        [HttpPost("register")]
+        [HttpPost("Register")]
         public async Task<ActionResult<ServiceResult<User>>> RegisterNewUser([FromBody] RegisterDto registerDto,
             CancellationToken cancellationToken)
         {
@@ -31,7 +31,7 @@ namespace NorthernLight.Auth.Controllers
         }
 
 
-        [HttpPost("signIn")]
+        [HttpPost("SignIn")]
         public async Task<ActionResult<ServiceResult<LoginResponse>>> SignIn([FromBody] LoginDto loginDto,
             CancellationToken cancellationToken)
         {

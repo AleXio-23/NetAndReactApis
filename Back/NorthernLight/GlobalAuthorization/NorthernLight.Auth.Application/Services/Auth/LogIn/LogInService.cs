@@ -84,7 +84,14 @@ namespace NorthernLight.Auth.Application.Services.Auth.LogIn
             var getUser = await vwUserSignInResponseRepository.Where(x => x.Id == user.Id).Select(op =>
                 new LoginResponse()
                 {
-                    AccessToken = generateToken.Item1
+                    AccessToken = generateToken.Item1,
+                    User = new Domain.Models.User.UserDTO()
+                    {
+                        Id = user.Id,
+                        Email = user.Email,
+                        IsActive = user.IsActive,
+                        Username = user.Username
+                    }
                 }).FirstOrDefaultAsync(cancellationToken).ConfigureAwait(false);
 
             if (getUser == null)

@@ -8,6 +8,8 @@ namespace AuroraFlow.Persistance.Repository
 
         protected readonly AuroraFlowDbContext _context = context;
 
+        
+        public IQueryable<TEntity> All => _context.Set<TEntity>();
         public async Task<IEnumerable<TEntity>> GetAll(CancellationToken cancellationToken)
         {
             return await _context.Set<TEntity>().ToListAsync(cancellationToken).ConfigureAwait(false);
@@ -19,7 +21,7 @@ namespace AuroraFlow.Persistance.Repository
         }
 
 
-        public async Task<TEntity> Add(TEntity entity, CancellationToken cancellationToken)
+        public async Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken)
         {
             var newData = await _context.Set<TEntity>().AddAsync(entity, cancellationToken).ConfigureAwait(false);
             await _context.SaveChangesAsync(cancellationToken).ConfigureAwait(false);

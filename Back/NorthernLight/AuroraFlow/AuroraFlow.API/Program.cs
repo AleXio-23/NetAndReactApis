@@ -27,8 +27,8 @@ builder.Services.AddDbContext<AuroraFlowDbContext>(options =>
                 errorNumbersToAdd: null); // Specific SQL error numbers to consider for retries
         }));
 
-// builder.Services.RegisterPersistanceServces();
-builder.Services.RegisterApplicationServices();
+builder.Services.RegisterPersistanceServices();
+builder.Services.RegisterApplicationServices(builder.Configuration);
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

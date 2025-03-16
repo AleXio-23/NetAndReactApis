@@ -1,5 +1,4 @@
-using AuroraFlow.Persistance.Entities;
-using AuroraFlow.Persistance.Repository;
+using AuroraFlow.Persistance.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AuroraFlow.Persistance;
@@ -8,7 +7,7 @@ public static class PersistanceServices
 {
     public static IServiceCollection RegisterPersistanceServices(this IServiceCollection services)
     {
-        services.AddScoped<IRepository<User>, Repository<User>>();
+        services.AddScoped<IAuroraFlowUnitOfWork,  AuroraFlowUnitOfWork>();
 
 
         return services;
