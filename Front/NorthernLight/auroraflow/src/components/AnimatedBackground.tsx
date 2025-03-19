@@ -55,8 +55,16 @@ const Bubble = styled.div<BubbleProps>`
 export const AnimatedBackground: React.FC = () => {
   const [bubbles, setBubbles] = useState<React.ReactNode[]>([]);
   const { theme } = useContext(ThemeContext);
+  const [isMounted, setIsMounted] = useState(false);
+  
+  // Only run on client side to avoid hydration mismatch with random values
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   
   useEffect(() => {
+    if (!isMounted) return;
+    
     // Use colors from the theme with distinct options for dark mode
     const colors = theme.isDark 
       ? [
@@ -102,7 +110,12 @@ export const AnimatedBackground: React.FC = () => {
     setBubbles(newBubbles);
 
     console.log("Animated background initialized with", newBubbles.length, "bubbles in", theme.isDark ? "dark" : "light", "mode");
-  }, [theme]); // Recreate bubbles when theme changes
+  }, [theme, isMounted]); // Recreate bubbles when theme changes or component mounts
+  
+  // Don't render anything on the server
+  if (!isMounted) {
+    return <div id="background-wrapper"></div>;
+  }
   
   return (
     <div id="background-wrapper">

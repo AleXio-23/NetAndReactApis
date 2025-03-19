@@ -10,8 +10,13 @@ export default function StyledComponentsRegistry({
   children: React.ReactNode;
 }) {
   // Only create stylesheet once with lazy initial state
-  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
   const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet());
+  const [mounted, setMounted] = useState(false);
+
+  // After client-side hydration
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();
@@ -19,7 +24,10 @@ export default function StyledComponentsRegistry({
     return <>{styles}</>;
   });
 
-  if (typeof window !== 'undefined') return <>{children}</>;
+  if (typeof window !== 'undefined' && mounted) {
+    // Client-side rendering after hydration
+    return <>{children}</>;
+  }
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>

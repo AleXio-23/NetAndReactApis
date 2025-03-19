@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import { usePathname } from 'next/navigation';
+import ClientOnly from '@/components/ClientOnly';
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -28,7 +29,11 @@ export const Providers: React.FC<ProvidersProps> = ({ children }) => {
   
   return (
     <>
-      {showBackground && <AnimatedBackground />}
+      {showBackground && (
+        <ClientOnly>
+          <AnimatedBackground />
+        </ClientOnly>
+      )}
       {children}
     </>
   );

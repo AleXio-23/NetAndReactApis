@@ -23,7 +23,6 @@ public class SignInService(
 {
     private readonly ConnectedApis _connectedApis = connectedApisOptions.Value;
 
-    // private readonly
     public async Task<ServiceResult<LoginResponse>> Execute(LoginDto loginDto, CancellationToken cancellationToken)
     {
         var userAuthApi = RestClient.For<IUserAuthenticationServices>(_connectedApis.GlobalAuthorisation);
