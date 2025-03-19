@@ -46,5 +46,31 @@
     "submit": "Send Recovery Instructions",
     "backToSignIn": "Back to Sign In",
     "emailSent": "Password reset instructions have been sent to {{email}}. Please check your inbox."
+  },
+  "dashboard": {
+    "home": "Home",
+    "projects": "Projects",
+    "tasks": "Tasks",
+    "calendar": "Calendar",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "workspace": "My Workspace",
+    "search": "Search...",
+    "welcomeTitle": "Welcome to AuroraFlow",
+    "welcomeSubtitle": "Here's what's happening with your projects today.",
+    "totalProjects": "Total Projects",
+    "activeProjects": "Currently active",
+    "completedTasks": "Completed Tasks",
+    "tasksThisWeek": "This week",
+    "teamMembers": "Team Members",
+    "activeMembersCount": "Currently active",
+    "upcomingDeadlines": "Upcoming Deadlines",
+    "nextSevenDays": "Next 7 days",
+    "recentActivities": "Recent Activities",
+    "taskCreated": "Created task \"{{task}}\"",
+    "taskCompleted": "Completed task \"{{task}}\"",
+    "commentAdded": "Added comment to \"{{task}}\"",
+    "statusChanged": "Changed status of \"{{task}}\" to {{status}}",
+    "memberJoined": "{{name}} joined the workspace"
   }
 } 

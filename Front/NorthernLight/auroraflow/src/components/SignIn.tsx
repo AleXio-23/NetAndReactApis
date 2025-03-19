@@ -3,6 +3,7 @@
 import React, { useState, FormEvent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/navigation';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSelector } from './LanguageSelector';
 import Link from 'next/link';
@@ -275,6 +276,7 @@ const SignUpLink = styled(Link)`
 const SignIn: React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const { t, i18n } = useTranslation();
+  const router = useRouter();
   const isGeorgian = i18n.language === 'ka';
   
   const togglePasswordVisibility = (): void => {
@@ -283,11 +285,15 @@ const SignIn: React.FC = () => {
   
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    // Add sign-in logic here
+    // In a real app, you would authenticate the user here
+    // For now, we'll just redirect to the dashboard
+    router.push('/dashboard');
   };
   
   const handleGoogleSignIn = (): void => {
-    // Add Google sign-in logic here
+    // In a real app, you would integrate with Google OAuth here
+    // For now, we'll just redirect to the dashboard
+    router.push('/dashboard');
   };
   
   return (

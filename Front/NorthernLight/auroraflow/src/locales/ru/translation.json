@@ -46,5 +46,31 @@
     "submit": "Отправить инструкции",
     "backToSignIn": "Вернуться к входу",
     "emailSent": "Инструкции по восстановлению пароля отправлены на {{email}}. Пожалуйста, проверьте вашу почту."
+  },
+  "dashboard": {
+    "home": "Главная",
+    "projects": "Проекты",
+    "tasks": "Задачи",
+    "calendar": "Календарь",
+    "analytics": "Аналитика",
+    "settings": "Настройки",
+    "workspace": "Моё рабочее пространство",
+    "search": "Поиск...",
+    "welcomeTitle": "Добро пожаловать в AuroraFlow",
+    "welcomeSubtitle": "Вот что происходит с вашими проектами сегодня.",
+    "totalProjects": "Всего проектов",
+    "activeProjects": "Активных сейчас",
+    "completedTasks": "Завершённые задачи",
+    "tasksThisWeek": "На этой неделе",
+    "teamMembers": "Члены команды",
+    "activeMembersCount": "Активных сейчас",
+    "upcomingDeadlines": "Ближайшие сроки",
+    "nextSevenDays": "Следующие 7 дней",
+    "recentActivities": "Недавние действия",
+    "taskCreated": "Создана задача \"{{task}}\"",
+    "taskCompleted": "Завершена задача \"{{task}}\"",
+    "commentAdded": "Добавлен комментарий к \"{{task}}\"",
+    "statusChanged": "Изменён статус \"{{task}}\" на {{status}}",
+    "memberJoined": "{{name}} присоединился к рабочему пространству"
   }
 } 

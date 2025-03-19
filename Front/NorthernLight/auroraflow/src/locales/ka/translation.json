@@ -46,5 +46,31 @@
     "submit": "აღდგენის ინსტრუქციების გაგზავნა",
     "backToSignIn": "დაბრუნება ავტორიზაციის გვერდზე",
     "emailSent": "პაროლის აღდგენის ინსტრუქციები გაიგზავნა {{email}}-ზე. გთხოვთ შეამოწმოთ თქვენი შემომავალი წერილები."
+  },
+  "dashboard": {
+    "home": "მთავარი",
+    "projects": "პროექტები",
+    "tasks": "დავალებები",
+    "calendar": "კალენდარი",
+    "analytics": "ანალიტიკა",
+    "settings": "პარამეტრები",
+    "workspace": "ჩემი სამუშაო სივრცე",
+    "search": "ძიება...",
+    "welcomeTitle": "მოგესალმებით AuroraFlow-ში",
+    "welcomeSubtitle": "აქ არის თქვენი პროექტების მიმდინარე მდგომარეობა.",
+    "totalProjects": "პროექტების ჯამი",
+    "activeProjects": "ამჟამად აქტიური",
+    "completedTasks": "დასრულებული დავალებები",
+    "tasksThisWeek": "ამ კვირაში",
+    "teamMembers": "გუნდის წევრები",
+    "activeMembersCount": "ამჟამად აქტიური",
+    "upcomingDeadlines": "მომავალი ვადები",
+    "nextSevenDays": "მომდევნო 7 დღე",
+    "recentActivities": "ბოლო აქტივობები",
+    "taskCreated": "შეიქმნა დავალება \"{{task}}\"",
+    "taskCompleted": "დასრულდა დავალება \"{{task}}\"",
+    "commentAdded": "დაემატა კომენტარი დავალებას \"{{task}}\"",
+    "statusChanged": "შეიცვალა დავალების \"{{task}}\" სტატუსი {{status}}-ზე",
+    "memberJoined": "{{name}} შემოუერთდა სამუშაო სივრცეს"
   }
 } 
