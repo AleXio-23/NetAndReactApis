@@ -8,7 +8,7 @@ import ClientOnly from '@/components/ClientOnly';
 const useAuthCheck = () => {
   // For demonstration, we'll consider the user is logged in
   // In a real app, this would check for a valid auth token/session
-  return { isAuthenticated: true, isLoading: false };
+  return { isAuthenticated: true, isLoading: false, user: { name: 'Alex', initials: 'A' } };
 };
 
 export default function DashboardLayout({
@@ -23,6 +23,12 @@ export default function DashboardLayout({
     // Redirect to login if not authenticated and not loading
     if (!isLoading && !isAuthenticated) {
       router.push('/signin');
+    }
+    
+    // Set a flag in localStorage to indicate user is authenticated
+    // This can be used by other components to adjust UI
+    if (isAuthenticated) {
+      localStorage.setItem('isAuthenticated', 'true');
     }
   }, [isAuthenticated, isLoading, router]);
   

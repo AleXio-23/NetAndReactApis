@@ -13,6 +13,21 @@ const LayoutContainer = styled.div`
   min-height: 100vh;
   background-color: ${({ theme }) => theme.backgroundPrimary};
   color: ${({ theme }) => theme.text};
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: ${({ theme }) => theme.isDark 
+      ? 'linear-gradient(135deg, rgba(17,24,39,0.95) 0%, rgba(31,41,55,0.9) 100%)'
+      : 'linear-gradient(135deg, rgba(249,250,251,0.95) 0%, rgba(243,244,246,0.9) 100%)'
+    };
+    z-index: -1;
+  }
 `;
 
 const Sidebar = styled.aside`
@@ -181,7 +196,22 @@ interface DashboardLayoutProps {
 
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   const pathname = usePathname();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [, forceUpdate] = React.useState({});
+  
+  // Update component when language changes
+  React.useEffect(() => {
+    // Force re-render when language changes to update all translations
+    const handleLanguageChanged = () => {
+      forceUpdate({});
+    };
+    
+    i18n.on('languageChanged', handleLanguageChanged);
+    
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, [i18n]);
   
   const navItems = [
     { label: t('dashboard.home'), icon: '🏠', href: '/dashboard' },

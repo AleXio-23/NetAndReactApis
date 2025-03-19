@@ -123,7 +123,21 @@ const ActivityMeta = styled.div`
 `;
 
 const DashboardPage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [, forceUpdate] = React.useState({});
+  
+  // Force re-render when language changes to update all translations
+  React.useEffect(() => {
+    const handleLanguageChanged = () => {
+      forceUpdate({});
+    };
+    
+    i18n.on('languageChanged', handleLanguageChanged);
+    
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, [i18n]);
   
   // Example data
   const metrics = [

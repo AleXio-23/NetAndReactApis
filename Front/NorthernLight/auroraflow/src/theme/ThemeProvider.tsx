@@ -7,12 +7,16 @@ interface ThemeProps {
   primary: string;
   secondary: string;
   background: string;
+  backgroundPrimary: string;
+  backgroundSecondary: string;
   cardBackground: string;
   text: string;
+  textSecondary: string;
   inputBorder: string;
   inputBackground: string;
   buttonText: string;
   isDark: boolean;
+  type: string;
 }
 
 interface ThemeContextProps {
@@ -28,24 +32,32 @@ const lightTheme: ThemeProps = {
   primary: '#7c3aed', // violet
   secondary: '#3b82f6', // blue
   background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(249,250,251,0.95) 100%)',
-  cardBackground: '#f9fafb',
+  backgroundPrimary: '#f9fafb',
+  backgroundSecondary: '#f3f4f6',
+  cardBackground: '#ffffff',
   text: '#111827',
+  textSecondary: '#4b5563',
   inputBorder: '#d1d5db',
   inputBackground: '#ffffff',
   buttonText: '#ffffff',
-  isDark: false
+  isDark: false,
+  type: 'light'
 };
 
 const darkTheme: ThemeProps = {
   primary: '#8b5cf6', // lighter violet for dark mode
   secondary: '#60a5fa', // lighter blue for dark mode
   background: 'linear-gradient(135deg, rgba(17,24,39,0.9) 0%, rgba(31,41,55,0.95) 100%)',
+  backgroundPrimary: '#111827',
+  backgroundSecondary: '#1f2937',
   cardBackground: '#1f2937',
   text: '#f9fafb',
+  textSecondary: '#9ca3af',
   inputBorder: '#374151',
   inputBackground: '#1f2937',
   buttonText: '#ffffff',
-  isDark: true
+  isDark: true,
+  type: 'dark'
 };
 
 export const ThemeContext = createContext<ThemeContextProps>({

@@ -166,14 +166,37 @@ export const LanguageSelector: React.FC = () => {
   };
   
   const changeLanguage = (code: string): void => {
+    // Change language
     i18n.changeLanguage(code);
+    
+    // Save to localStorage
+    localStorage.setItem('i18nextLng', code);
+    
+    // Explicitly dispatch storage event for other components to detect
+    window.dispatchEvent(new Event('storage'));
+    
+    // Close dropdown
     setIsOpen(false);
   };
+  
+  // Add click outside handler to close dropdown
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isOpen && !(event.target as Element).closest('.language-selector')) {
+        setIsOpen(false);
+      }
+    };
+    
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen]);
   
   const currentLang = getCurrentLanguage();
   
   return (
-    <SelectContainer>
+    <SelectContainer className="language-selector">
       <LanguageButton onClick={toggleDropdown}>
         <FlagContainer>
           {currentLang.flagIcon}

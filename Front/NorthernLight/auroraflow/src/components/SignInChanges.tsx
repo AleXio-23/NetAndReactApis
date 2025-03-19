@@ -1,5 +1,7 @@
 // Changes for SignIn.tsx:
 
+import styled from "styled-components";
+
 // 1. Add the ForgotPasswordLink component:
 const ForgotPasswordLink = styled.a`
   color: ${({ theme }) => theme.primary};
