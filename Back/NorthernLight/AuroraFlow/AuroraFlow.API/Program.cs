@@ -7,6 +7,7 @@ using System.Text;
 using AuroraFlow.Application;
 using AuroraFlow.Application.Infrastructure.MiddleWares;
 using AuroraFlow.Persistance;
+using StackExchange.Redis;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,14 @@ builder.Services.AddDbContext<AuroraFlowDbContext>(options =>
                 maxRetryDelay: TimeSpan.FromSeconds(30), // Maximum delay between retries
                 errorNumbersToAdd: null); // Specific SQL error numbers to consider for retries
         }));
+
+
+
+var redisConnectionString = builder.Configuration.GetSection("Redis:ConnectionString").Value;
+var configOptions = ConfigurationOptions.Parse(redisConnectionString);
+configOptions.AbortOnConnectFail = false;
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+    ConnectionMultiplexer.Connect(configOptions));
 
 builder.Services.RegisterPersistanceServices();
 builder.Services.RegisterApplicationServices(builder.Configuration);

@@ -4,5 +4,6 @@ namespace AuroraFlow.Shared.Constants
     {
         public const string SCHEMA_DICTIONARY = "dictionary";
         public const string SCHEMA_UMS = "ums";
+        public const string SCHEMA_SPACE = "space";
     }
 }

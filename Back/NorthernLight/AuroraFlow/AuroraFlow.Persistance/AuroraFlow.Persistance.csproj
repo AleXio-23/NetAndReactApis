@@ -13,6 +13,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="StackExchange.Redis" Version="2.8.31" />
     </ItemGroup>
 
 
@@ -23,11 +24,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AuroraFlow.Shared\AuroraFlow.Shared.csproj" />
-    </ItemGroup>
-
-
-    <ItemGroup>
-      <Folder Include="Entities\Tasks\" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 using AuroraFlow.Persistance.Entities.Spaces;
+using AuroraFlow.Persistance.Entities.Tasks;
 
 namespace AuroraFlow.Persistance.Entities;
 
@@ -12,4 +13,9 @@ public class User
 
     public virtual ICollection<WorkSpaceInvitedUsers> WorkSpaceInvitedUsers { get; set; } =
         new List<WorkSpaceInvitedUsers>();
+
+    public virtual ICollection<TaskAssignedUsers> TaskAssignedUsers { get; set; } =
+        new List<TaskAssignedUsers>();
+    public virtual ICollection<TaskCheckLists> AssignedTaskCheckLists { get; set; } =
+        new List<TaskCheckLists>();
 }
