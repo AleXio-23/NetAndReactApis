@@ -29,7 +29,7 @@ builder.Services.AddDbContext<AuthorizationDbContext>(options =>
                 errorNumbersToAdd: null); // Specific SQL error numbers to consider for retries
         }));
 
-builder.Services.RegisterPersistanceServces();
+builder.Services.RegisterPersistanceServices();
 builder.Services.RegisterApplicationServices();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
