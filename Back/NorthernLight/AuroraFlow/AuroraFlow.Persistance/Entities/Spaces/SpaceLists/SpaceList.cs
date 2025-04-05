@@ -1,4 +1,4 @@
-namespace AuroraFlow.Persistance.Entities.Spaces;
+namespace AuroraFlow.Persistance.Entities.Spaces.SpaceLists;
 
 /// <summary>
 /// სფეისთან დაკავშირებული ლისტი (სადაც თასქები და ა.შ გაერთიანდება)
@@ -9,7 +9,7 @@ public class SpaceList
     public int WorkSpaceId { get; set; }
     public string Name { get; set; }
     public bool IsActive { get; set; }
-    public int SortIndex { get; set; }
+    public int? SortIndex { get; set; }
     public bool IsPrivate { get; set; } = false;
 
     public virtual WorkSpace WorkSpace { get; set; }

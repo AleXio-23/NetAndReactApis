@@ -1,13 +1,13 @@
 using Microsoft.Extensions.DependencyInjection;
-using NorthernLight.Auth.Persistence.Entities;
+using NorthernLight.Auth.Persistence.Entities; 
 using NorthernLight.Auth.Persistence.Repository;
 
 namespace NorthernLight.Auth.Persistence
 {
-    public static class PersistanceServces
+    public static class PersistanceServices
     {
-        public static IServiceCollection RegisterPersistanceServces(this IServiceCollection services)
-        {
+        public static IServiceCollection RegisterPersistanceServices(this IServiceCollection services)
+        {  
             services.AddScoped<IRepository<User>, Repository<User>>();
             services.AddScoped<IRepository<UserProfile>, Repository<UserProfile>>();
             services.AddScoped<IRepository<RefreshToken>, Repository<RefreshToken>>();
